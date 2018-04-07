@@ -19,7 +19,7 @@ public class DirrecionIP extends AppCompatActivity {
 
         Ip nuevaIp = new Ip();
         nuevaIp.CantidaddeHost(this);
-        nuevaIp.NetId(this);
+        nuevaIp.Broadcast(this);
     }
 
 

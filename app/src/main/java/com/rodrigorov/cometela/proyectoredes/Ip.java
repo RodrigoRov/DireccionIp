@@ -12,11 +12,12 @@ import org.w3c.dom.Text;
  */
 
 public class Ip {
-    private int [] ip;
+    private int [] ip = new int[4];
     private int [] mascara = new int[4];
     private String netId;
     private String broadcast;
     private int expo;
+    private int [] negacion;
     private int hosts;
     EditText Temporal;
     TextView Temp2;
@@ -31,12 +32,12 @@ public class Ip {
         Temp2.setText(String.valueOf(hosts));
     }
 
-    public void NetId(Activity v){
+    public void Broadcast(Activity v){
         for(int i = 0;i<4;i++){
             mascara[i]=0;
         }
         Temporal = v.findViewById(R.id.TextoIp);
-        String [] temp = Temporal.getText().toString().split(".");
+        String [] temp = Temporal.getText().toString().split("\\.");
         for(int i =0;i<temp.length;i++){
             ip[i]=Integer.parseInt(temp[i]);
         }
@@ -78,10 +79,26 @@ public class Ip {
                 mascara[3] = accu;
             }
         }
-        Temp2 = v.findViewById(R.id.TextoNetId);
-        String mascra = String.valueOf(mascara[0])+"."+String.valueOf(mascara[1])+"."+String.valueOf(mascara[2])+"."+String.valueOf(mascara[3]);
+        negacion = new int[mascara.length];
+        int [] resultado = new int [mascara.length];
+        for(int i = 0;i<mascara.length;i++){
+            negacion[i] = 255- mascara[i];
+        }
+        for(int i = 0;i<mascara.length;i++){
+            resultado[i] = ip[i]|negacion[i];
+        }
+        Temp2 = v.findViewById(R.id.Textobroadcast);
+        String mascra = String.valueOf(resultado[0])+"."+String.valueOf(resultado[1])+"."+String.valueOf(resultado[2])+"."+String.valueOf(resultado[3]);
         Temp2.setText(mascra);
 
+    }
+
+    public void ParteRed(Activity v){
+        for(int i = 0;i<mascara.length;i++){
+            if(mascara[i]!=0){
+
+            }
+        }
     }
 
 }

@@ -206,7 +206,8 @@
         android:textColor="#000"
         android:layout_below="@id/parteHost"
         android:layout_alignLeft="@id/parteHost"
-        android:layout_alignStart="@id/parteHost" />
+        android:layout_alignStart="@id/parteHost"
+        android:id="@+id/TextoParteHost"/>
 
     <Button
         android:layout_width="wrap_content"

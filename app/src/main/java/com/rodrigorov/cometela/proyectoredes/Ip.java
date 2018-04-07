@@ -2,6 +2,7 @@ package com.rodrigorov.cometela.proyectoredes;
 
 import android.app.Activity;
 import android.view.View;
+import android.widget.ActionMenuView;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -14,7 +15,7 @@ import org.w3c.dom.Text;
 public class Ip {
     private int [] ip = new int[4];
     private int [] mascara = new int[4];
-    private String netId;
+    private int [] netId = new int[4];
     private String broadcast;
     private int expo;
     private int [] negacion;
@@ -93,12 +94,60 @@ public class Ip {
 
     }
 
+    public void NetId(Activity v){
+        for(int i=0;i<mascara.length;i++){
+            netId[i] = mascara[i]&ip[i];
+        }
+        Temp2 = v.findViewById(R.id.TextoNetId);
+        String res="";
+        for(int i=0; i<netId.length;i++){
+            if(i==3)
+                res=res+String.valueOf(netId[i]);
+            else
+                res = res+String.valueOf(netId[i])+".";
+
+        }
+        Temp2.setText(res);
+    }
+
     public void ParteRed(Activity v){
+        String red = "";
         for(int i = 0;i<mascara.length;i++){
-            if(mascara[i]!=0){
+            if((mascara[i]&ip[i]) !=0){
+                if(i==3)
+                    red=red + String.valueOf(ip[i]);
+                else
+                    red=red + String.valueOf(ip[i]+".");
+            }
+            else
+                break;
+        }
+        if(expo%8 != 0){
+            red = red + " /" + String.valueOf(expo);
+        }
+        Temp2 = v.findViewById(R.id.TextoRed);
+        Temp2.setText(red);
+    }
+
+    public void ParteHost(Activity v){
+        String host ="";
+        for(int i = 0;i<mascara.length;i++){
+            if((mascara[i]&ip[i]) ==0) {
+                if(i==3)
+                    host=host + String.valueOf(ip[i]);
+                else
+                    host=host + String.valueOf(ip[i]+".");
+            }
+            else {
+                break;
 
             }
         }
+        if(expo%8 != 0){
+            host = host + " /" + String.valueOf(expo);
+        }
+        Temp2 = v.findViewById(R.id.TextoParteHost);
+        Temp2.setText(host);
     }
 
 }

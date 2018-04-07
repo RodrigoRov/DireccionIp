@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.rodrigorov.cometela.proyectoredes.DirrecionIP">
+
+    <!-- Empieza primera linea-->
+    <!-- IP-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IP"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:id="@+id/ip"
+         />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_alignStart="@id/ip"
+        android:layout_alignLeft="@id/ip"
+        android:layout_below="@id/ip"
+        android:text="Ingrese direccion IP"
+        android:textSize="16sp"
+        android:inputType="text"
+        android:id="@+id/TextoIp"
+        />
+    <!-- Pleca -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="/"
+        android:textSize="24sp"
+        android:layout_toRightOf="@id/TextoIp"
+        android:layout_below="@id/ip"
+        android:layout_toEndOf="@id/TextoIp"
+        android:id="@+id/pleca"
+         />
+
+    <!--Mascara de Red-->
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingrese Máscara"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:textSize="16sp"
+        android:inputType="text"
+        android:layout_toRightOf="@id/pleca"
+        android:layout_toEndOf="@id/pleca"
+        android:layout_below="@id/ip"
+        android:id="@+id/mascara"
+         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Máscara"
+        android:layout_alignTop="@id/mascara"
+        android:layout_alignBaseline="@id/ip"
+        android:textSize="16sp"
+        android:layout_alignStart="@id/mascara"
+        android:layout_alignLeft="@id/mascara" />
+
+    <!--Termina primera linea -->
+
+
+    <!-- Segunda Linea-->
+    <!-- Net Id-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:text="Net ID"
+        android:layout_below="@id/TextoIp"
+        android:layout_alignLeft="@id/ip"
+        android:layout_alignStart="@id/ip"
+        android:textSize="16sp"
+        android:id="@+id/NetID"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_alignStart="@id/ip"
+        android:layout_alignLeft="@id/ip"
+        android:layout_below="@id/NetID"
+        android:text="ID de Red"
+        android:textColor="#000"
+        android:textSize="16sp"
+        android:id="@+id/TextoNetId"
+        />
+    <!-- Tercera Linea-->
+    <!--Broadcast-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Broadcast"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:textSize="16sp"
+        android:layout_alignLeft="@id/ip"
+        android:layout_alignStart="@id/ip"
+        android:layout_below="@id/TextoNetId"
+        android:id="@+id/broadcast"
+         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Direccion Broadcast"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:textSize="16sp"
+        android:textColor="#000"
+        android:layout_alignLeft="@id/ip"
+        android:layout_alignStart="@id/ip"
+        android:layout_below="@id/broadcast"
+        android:id="@+id/Textobroadcast"
+         />
+    <!-- Cuarta linea-->
+    <!-- Cantidad de Host -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cantidad de Host"
+        android:textSize="16sp"
+        android:layout_below="@id/Textobroadcast"
+        android:layout_alignLeft="@id/ip"
+        android:layout_alignStart="@id/ip"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:id="@+id/cantidadHost"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cantidad"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:textColor="#000"
+        android:layout_below="@id/cantidadHost"
+        android:layout_alignLeft="@id/ip"
+        android:layout_alignStart="@id/ip"
+        android:textSize="16sp"
+        android:id="@+id/TextoHost"
+        />
+    <!-- Parte de Red-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp"
+        android:text="Parte de Red"
+        android:layout_toEndOf="@id/cantidadHost"
+        android:layout_toRightOf="@id/cantidadHost"
+        android:layout_below="@id/pleca"
+        android:layout_alignBaseline="@id/cantidadHost"
+        android:layout_alignLeft="@id/pleca"
+        android:layout_alignStart="@id/pleca"
+        android:id="@+id/parteRed"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Red"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:textSize="16sp"
+        android:layout_below="@id/parteRed"
+        android:textColor="#000"
+        android:layout_alignLeft="@id/parteRed"
+        android:id="@+id/TextoRed"
+        android:layout_alignStart="@id/parteRed"
+        />
+    <!-- Quinta linea -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="32dp"
+        android:text="Parte de Host"
+        android:textSize="16sp"
+        android:layout_below="@id/TextoHost"
+        android:layout_toEndOf="@id/parteRed"
+        android:layout_alignBaseline="@id/parteRed"
+        android:layout_toRightOf="@id/parteRed"
+        android:id="@+id/parteHost"
+
+         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:textSize="16sp"
+        android:text="Host"
+        android:textColor="#000"
+        android:layout_below="@id/parteHost"
+        android:layout_alignLeft="@id/parteHost"
+        android:layout_alignStart="@id/parteHost"
+        />
+
+
+</RelativeLayout>

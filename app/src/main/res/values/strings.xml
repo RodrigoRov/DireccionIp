@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">ProyectoRedes</string>
+    <string name="ip">IP</string>
+    <string name="ingrese_direccion_ip">Ingrese direccion IP</string>
+    <string name="pleca">/</string>
+    <string name="ingrese_m_scara">Ingrese Máscara</string>
+    <string name="m_scara">Máscara</string>
+    <string name="net_id">Net ID</string>
+    <string name="id_de_red">ID de Red</string>
+    <string name="broadcast">Broadcast</string>
+    <string name="direccion_broadcast">Direccion Broadcast</string>
+    <string name="cantidad_de_host">Cantidad de Host</string>
+    <string name="cantidad">Cantidad</string>
+    <string name="parte_de_red">Parte de Red</string>
+    <string name="red">Red</string>
+    <string name="parte_de_host">Parte de Host</string>
+    <string name="host">Host</string>
+    <string name="realizar">Realizar</string>
+    <string name="realizar">Realizar</string>
+    <string name="host">Host</string>
+    <string name="parte_de_host">Parte de Host</string>
+    <string name="red">Red</string>
+    <string name="parte_de_red">Parte de Red</string>
+    <string name="cantidad">Cantidad</string>
+    <string name="cantidad_de_host">Cantidad de Host</string>
+    <string name="direccion_broadcast">Direccion Broadcast</string>
+    <string name="broadcast">Broadcast</string>
+    <string name="id_de_red">ID de Red</string>
+    <string name="net_id">Net ID</string>
+    <string name="m_scara">Máscara</string>
+    <string name="ingrese_m_scara">Ingrese Máscara</string>
+    <string name="pleca">/</string>
+    <string name="ingrese_direccion_ip">Ingrese direccion IP</string>
+    <string name="ip">IP</string>
 </resources>

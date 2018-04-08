@@ -24,6 +24,7 @@ public class Ip {
     EditText Temporal;
     TextView Temp2;
 
+    //Sacante la cantidad de Host
     public void CantidaddeHost(Activity v){
         Temporal = v.findViewById(R.id.Textomascara);
         Temp2 = v.findViewById(R.id.TextoHost);
@@ -33,7 +34,7 @@ public class Ip {
             hosts=1;
         Temp2.setText(String.valueOf(hosts));
     }
-
+    //Sacando direccion broadcast
     public void Broadcast(Activity v){
         for(int i = 0;i<4;i++){
             mascara[i]=0;
@@ -44,6 +45,7 @@ public class Ip {
             ip[i]=Integer.parseInt(temp[i]);
         }
         int accu=0;
+        //metodo para sacar mascara de red en base a exponentes
         for(int i=expo-1,j = 7;i>=0;i--,j--){
             if(i==7){
                 j=7;
@@ -81,6 +83,7 @@ public class Ip {
                 mascara[3] = accu;
             }
         }
+        //negando mascara de red
         negacion = new int[mascara.length];
         int [] resultado = new int [mascara.length];
         for(int i = 0;i<mascara.length;i++){
@@ -94,7 +97,7 @@ public class Ip {
         Temp2.setText(mascra);
 
     }
-
+    //sacando NetID
     public void NetId(Activity v){
         for(int i=0;i<mascara.length;i++){
             netId[i] = mascara[i]&ip[i];
@@ -110,7 +113,7 @@ public class Ip {
         }
         Temp2.setText(res);
     }
-
+    //Sacando parte de Red
     public void ParteRed(Activity v){
         String red = "";
         for(int i = 0;i<mascara.length;i++){
@@ -129,7 +132,7 @@ public class Ip {
         Temp2 = v.findViewById(R.id.TextoRed);
         Temp2.setText(red);
     }
-
+    //Sacando parte de Host
     public void ParteHost(Activity v){
         int [] aux = new int [4];
         String host ="";
@@ -146,7 +149,7 @@ public class Ip {
         Temp2 = v.findViewById(R.id.TextoParteHost);
         Temp2.setText(String.valueOf(host));
     }
-
+    //Verificar si la Ip o mascara contiene algo
     public boolean Verify(Activity v){
         Temporal = v.findViewById(R.id.TextoIp);
         EditText Temp = v.findViewById(R.id.Textomascara);

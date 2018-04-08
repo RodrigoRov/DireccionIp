@@ -18,11 +18,13 @@ public class DirrecionIP extends AppCompatActivity {
     public void Hacer(View v){
 
         Ip nuevaIp = new Ip();
-        nuevaIp.CantidaddeHost(this);
-        nuevaIp.Broadcast(this);
-        nuevaIp.NetId(this);
-        nuevaIp.ParteRed(this);
-        nuevaIp.ParteHost(this);
+        if(nuevaIp.Verify(this)) {
+            nuevaIp.CantidaddeHost(this);
+            nuevaIp.Broadcast(this);
+            nuevaIp.NetId(this);
+            nuevaIp.ParteRed(this);
+            nuevaIp.ParteHost(this);
+        }
     }
 
 

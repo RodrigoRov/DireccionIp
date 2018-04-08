@@ -1,10 +1,12 @@
 package com.rodrigorov.cometela.proyectoredes;
 
 import android.app.Activity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ActionMenuView;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -16,7 +18,6 @@ public class Ip {
     private int [] ip = new int[4];
     private int [] mascara = new int[4];
     private int [] netId = new int[4];
-    private String broadcast;
     private int expo;
     private int [] negacion;
     private int hosts;
@@ -130,24 +131,33 @@ public class Ip {
     }
 
     public void ParteHost(Activity v){
+        int [] aux = new int [4];
         String host ="";
-        for(int i = 0;i<mascara.length;i++){
-            if((mascara[i]&ip[i]) ==0) {
-                if(i==3)
-                    host=host + String.valueOf(ip[i]);
-                else
-                    host=host + String.valueOf(ip[i]+".");
-            }
-            else {
-                break;
-
-            }
+        for(int i = 0;i<4;i++){
+            aux [i] = negacion[i]&ip[i];
+        }
+        for(int i = 0;i<4;i++){
+            if(aux[i] != 0 )
+                host = host +"."+ String.valueOf(aux[i]);
         }
         if(expo%8 != 0){
             host = host + " /" + String.valueOf(expo);
         }
         Temp2 = v.findViewById(R.id.TextoParteHost);
-        Temp2.setText(host);
+        Temp2.setText(String.valueOf(host));
+    }
+
+    public boolean Verify(Activity v){
+        Temporal = v.findViewById(R.id.TextoIp);
+        EditText Temp = v.findViewById(R.id.Textomascara);
+        if(Temporal.getText().length() == 0 || Temp.getText().length()==0){
+            Toast toast = Toast.makeText(v.getApplicationContext(),"Por Favor ingresar IP y Mascara de red",Toast.LENGTH_LONG);
+            toast.show();
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 
 }

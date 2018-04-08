@@ -26,7 +26,7 @@
         android:layout_alignStart="@id/ip"
         android:layout_alignLeft="@id/ip"
         android:layout_below="@id/ip"
-        android:text="Ingrese direccion IP"
+        android:hint="Ingrese direccion IP"
         android:textSize="16sp"
         android:inputType="text"
         android:id="@+id/TextoIp"
@@ -52,7 +52,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ingrese Máscara"
+        android:hint="Ingrese Máscara"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:textSize="16sp"
@@ -60,17 +60,17 @@
         android:layout_toRightOf="@id/pleca"
         android:layout_toEndOf="@id/pleca"
         android:layout_below="@id/ip"
-        android:id="@+id/mascara"
+        android:id="@+id/Textomascara"
          />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Máscara"
-        android:layout_alignTop="@id/mascara"
+        android:layout_alignTop="@id/Textomascara"
         android:layout_alignBaseline="@id/ip"
         android:textSize="16sp"
-        android:layout_alignStart="@id/mascara"
-        android:layout_alignLeft="@id/mascara" />
+        android:layout_alignStart="@id/Textomascara"
+        android:layout_alignLeft="@id/Textomascara" />
 
     <!--Termina primera linea -->
 
@@ -165,10 +165,8 @@
         android:text="Parte de Red"
         android:layout_toEndOf="@id/cantidadHost"
         android:layout_toRightOf="@id/cantidadHost"
-        android:layout_below="@id/pleca"
+        android:layout_marginLeft="24dp"
         android:layout_alignBaseline="@id/cantidadHost"
-        android:layout_alignLeft="@id/pleca"
-        android:layout_alignStart="@id/pleca"
         android:id="@+id/parteRed"
         />
     <TextView
@@ -184,13 +182,13 @@
         android:id="@+id/TextoRed"
         android:layout_alignStart="@id/parteRed"
         />
-    <!-- Quinta linea -->
+    <!--Parte de Host-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="4dp"
-        android:layout_marginLeft="32dp"
+        android:layout_marginLeft="40dp"
         android:text="Parte de Host"
         android:textSize="16sp"
         android:layout_below="@id/TextoHost"
@@ -198,8 +196,7 @@
         android:layout_alignBaseline="@id/parteRed"
         android:layout_toRightOf="@id/parteRed"
         android:id="@+id/parteHost"
-
-         />
+        android:layout_marginStart="40dp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" 
@@ -209,7 +206,18 @@
         android:layout_below="@id/parteHost"
         android:layout_alignLeft="@id/parteHost"
         android:layout_alignStart="@id/parteHost"
+        android:layout_alignBaseline="@id/TextoRed"
+        android:id="@+id/TextoParteHost"
         />
-
-
+    <!--Boton-->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Realizar"
+        android:layout_alignBaseline="@id/TextoParteHost"
+        android:layout_toRightOf="@id/parteHost"
+        android:layout_toEndOf="@id/parteHost"
+        android:layout_marginLeft="32dp"
+        android:onClick="Hacer"
+        />
 </RelativeLayout>
